@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>HawkStrike | Safe Web Security Simulator</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <main>
+
+        <!-- NAVIGATION -->
+        <nav>
+            <a class="brand" href="#top">
+                <span>◈</span>
+                HAWKSTRIKE
+            </a>
+
+            <div class="navlinks">
+                <a href="#lab">Practice lab</a>
+                <a href="#how">How it works</a>
+            </div>
+
+            <div class="local">
+                ● LOCAL-ONLY SANDBOX
+            </div>
+        </nav>
+
+
+        <!-- HERO SECTION -->
+        <section class="hero" id="top">
+
+            <div>
+
+                <p class="eyebrow">
+                    SAFE WEB SECURITY TRAINING
+                </p>
+
+                <h1>
+                    See what the app<br>
+                    <em>does with your input.</em>
+                </h1>
+
+                <p>
+                    Practice SQL Injection and XSS concepts in a
+                    contained, resettable simulation. No real
+                    accounts, databases, or external network calls.
+                </p>
+
+                <a class="cta" href="#lab">
+                    Enter the practice lab
+                    <span>→</span>
+                </a>
+
+                <small>
+                    For learning only · Fake data · Reset anytime
+                </small>
+
+            </div>
+
+
+            <div class="hero-panel">
+
+                <div class="panel-top">
+                    <span>HAWKSTRIKE STATUS</span>
+                    <b>SAFE</b>
+                </div>
+
+                <div class="shield">
+                    ⌁
+                </div>
+
+                <h3>
+                    Everything stays in the lab.
+                </h3>
+
+                <div class="checks">
+                    <span>✓ Simulated outcomes</span>
+                    <span>✓ Seeded fake data</span>
+                    <span>✓ No external connection</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRACTICE LAB -->
+        <section class="lab" id="lab">
+
+            <header class="lab-head">
+
+                <div>
+
+                    <p class="eyebrow">
+                        INTERACTIVE SANDBOX
+                    </p>
+
+                    <h2>
+                        Choose a practice scenario.
+                    </h2>
+
+                </div>
+
+            </header>
+
+
+            <!-- SCENARIO TABS -->
+            <div
+                class="scenario-tabs"
+                role="tablist"
+            >
+
+                <button
+                    class="scenario active"
+                    data-scenario="sql"
+                >
+                    ⌁ Login &amp; database
+                </button>
+
+                <button
+                    class="scenario"
+                    data-scenario="xss"
+                >
+                    &lt;/&gt; Community comments
+                </button>
+
+            </div>
+
+
+            <!-- SAFETY NOTE -->
+            <div class="safety-note">
+
+                <b>Safety boundary</b>
+
+                <span>
+                    This is a visual simulator. It never executes
+                    submitted code or sends a real database request.
+                </span>
+
+                <button id="reset">
+                    Reset this scenario
+                </button>
+
+            </div>
+
+
+            <!-- WORKSPACE -->
+            <div class="workspace">
+
+
+                <!-- FAKE APPLICATION -->
+                <section class="app-card">
+
+                    <div class="window">
+
+                        <i></i>
+                        <i></i>
+                        <i></i>
+
+                        <strong id="app-name">
+                            Acorn account login
+                        </strong>
+
+                        <span>
+                            FAKE APP
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="app-body"
+                        id="app-body"
+                    ></div>
+
+                </section>
+
+
+                <!-- EXPLANATION PANEL -->
+                <aside class="explain-card">
+
+                    <div class="mode-row">
+
+                        <p>
+                            HOW THE APP HANDLES INPUT
+                        </p>
+
+                        <div class="mode-buttons">
+
+                            <button
+                                class="mode active"
+                                data-mode="vulnerable"
+                            >
+                                Risky design
+                            </button>
+
+                            <button
+                                class="mode"
+                                data-mode="naive"
+                            >
+                                Quick patch
+                            </button>
+
+                            <button
+                                class="mode"
+                                data-mode="secure"
+                            >
+                                Secure design
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DATA FLOW -->
+                    <div
+                        class="data-flow"
+                        id="flow"
+                    ></div>
+
+
+                    <!-- LIVE EXPLANATION -->
+                    <div class="live-panel">
+
+                        <div class="live-head">
+
+                            <span>
+                                BEHIND THE SCENES
+                            </span>
+
+                            <b id="verdict">
+                                READY
+                            </b>
+
+                        </div>
+
+
+                        <pre id="technical">
+Run the example to see the app's decision.
+                        </pre>
+
+
+                        <div
+                            class="outcome"
+                            id="outcome"
+                        >
+
+                            <span>?</span>
+
+                            <div>
+
+                                <strong>
+                                    Start with an input
+                                </strong>
+
+                                <p>
+                                    Try a preset or type something
+                                    into the fake app.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+
+            <!-- LESSON -->
+            <div class="lesson-card">
+
+                <div>
+
+                    <span class="lesson-number">
+                        01
+                    </span>
+
+                    <p class="eyebrow">
+                        WHAT TO REMEMBER
+                    </p>
+
+                    <h3 id="lesson-title">
+                        Keep app instructions and visitor input separate.
+                    </h3>
+
+                </div>
+
+                <p id="lesson-copy">
+                    A database should receive its fixed instruction
+                    separately from the value a person submitted.
+                    This is the central idea behind parameterized queries.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- COMPARISON SECTION -->
+        <section class="compare">
+
+            <p class="eyebrow">
+                ONE INPUT, THREE OUTCOMES
+            </p>
+
+            <h2>
+                Why a quick patch is not enough.
+            </h2>
+
+            <div class="compare-grid">
+
+                <article>
+
+                    <span class="badge danger">
+                        RISKY
+                    </span>
+
+                    <h3>
+                        Mixes the two
+                    </h3>
+
+                    <p>
+                        App instructions and visitor input become
+                        one piece of text.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <span class="badge warning">
+                        QUICK PATCH
+                    </span>
+
+                    <h3>
+                        Tries to block clues
+                    </h3>
+
+                    <p>
+                        Filtering suspicious-looking text can miss
+                        variations and does not fix the underlying design.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <span class="badge good">
+                        SECURE
+                    </span>
+
+                    <h3>
+                        Uses separate lanes
+                    </h3>
+
+                    <p>
+                        The app's instruction is fixed; the visitor
+                        value stays data.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- HOW IT WORKS -->
+        <section
+            id="how"
+            class="how"
+        >
+
+            <p class="eyebrow">
+                HOW HAWKSTRIKE HELPS
+            </p>
+
+            <h2>
+                Practice the <em>why</em>, not just the rule.
+            </h2>
+
+            <div>
+
+                <article>
+
+                    <b>01</b>
+
+                    <h3>
+                        Use a fake app
+                    </h3>
+
+                    <p>
+                        Explore a login form and comments page
+                        with fictional data only.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <b>02</b>
+
+                    <h3>
+                        Watch the data move
+                    </h3>
+
+                    <p>
+                        Follow each submitted value from form to
+                        database or webpage.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <b>03</b>
+
+                    <h3>
+                        Compare the real fix
+                    </h3>
+
+                    <p>
+                        See why separating data from instructions
+                        works more reliably than a blocklist.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <a class="brand" href="#top">
+            <span>◈</span>
+            HAWKSTRIKE
+        </a>
+
+        <span>
+            Build safely. Learn responsibly.
+        </span>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="app.js"></script>
+
+</body>
+
+</html>
+```
